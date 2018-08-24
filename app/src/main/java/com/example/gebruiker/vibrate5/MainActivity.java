@@ -18,12 +18,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    
+
     /** Called when the user taps the Start button */
     public void startMetronome(View view) {
         /* Do something in response to button */
         Button b = (Button) view;
-        String buttonText = b.getText().toString();
         Vibrator v=(Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         TextView tv=(TextView)findViewById(R.id.editBpm);
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        if (b.getText().toString() == getResources().getString(R.string.btnStart)) {
+        if (b.getText().toString().equals(getResources().getString(R.string.btnStart))) {
             b.setText(R.string.btnStop);
 
             /* long bpm = 100; */
